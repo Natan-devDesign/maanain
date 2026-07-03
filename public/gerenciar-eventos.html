@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Eventos — Maanaim Admin</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <script>if (!localStorage.getItem('token')) window.location.href = 'login.html';</script>
+</head>
+<body style="background-color: var(--bg-off);">
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim">
+            <h1>Maanaim <span style="font-size: 0.8rem; color: var(--text-400); font-weight: 500; background: var(--bg-subtle); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); margin-left: 4px;">Admin</span></h1>
+        </a>
+        <nav>
+            <a href="admin.html">Orações</a>
+            <a href="gerenciar-eventos.html" class="active">Eventos</a>
+            <button id="btn-logout" class="btn-login" style="cursor:pointer; background-color: transparent; border: 1.5px solid var(--border-strong); color: var(--text-700);">Sair</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <div>
+                <h2>Gestão de Eventos</h2>
+                <p>Cadastre, edite ou exclua cultos e eventos da igreja.</p>
+            </div>
+            <button id="btn-novo-evento">+ Novo Evento</button>
+        </div>
+
+        <!-- MODAL DE FORMULÁRIO -->
+        <div id="modal-evento" class="modal">
+            <div class="modal-content">
+                <button id="btn-close-modal" class="close-btn">&times;</button>
+                <h3 id="form-title">Agendar Novo Evento</h3>
+                <form id="form-aviso" enctype="multipart/form-data">
+                    <input type="hidden" id="evento-id" value="">
+                    <div class="form-group">
+                        <label for="titulo-aviso">Título</label>
+                        <input type="text" id="titulo-aviso" placeholder="Ex: Culto de Jovens" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-aviso">Data</label>
+                        <input type="date" id="data-aviso" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagem-aviso">Imagem (Upload)</label>
+                        <input type="file" id="imagem-aviso" accept="image/*">
+                        <small class="text-muted">Deixe vazio ao editar se não quiser trocar a foto.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="texto-aviso">Descrição</label>
+                        <textarea id="texto-aviso" rows="4" placeholder="Detalhes do evento..." required></textarea>
+                    </div>
+                    <button type="submit" id="btn-submit-aviso" style="width: 100%; margin-top: 0.5rem;">Salvar Evento</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabela de Eventos -->
+        <article class="card">
+            <div style="overflow-x: auto;">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Título</th>
+                            <th style="text-align: right;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-eventos-admin">
+                        <tr><td colspan="3" class="text-center">Carregando eventos...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim" class="footer-logo" style="filter: brightness(0) invert(1);">
+            <div class="footer-bottom">
+                &copy; 2026 Igreja Evangélica Congregacional Maanaim.
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/app.js?v=4"></script>
+</body>
+</html>

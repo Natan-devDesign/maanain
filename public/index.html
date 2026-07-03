@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Igreja Maanaim — Um lugar de adoração, ensino da Palavra e comunhão com a família de Deus.">
+    <title>Igreja Maanaim — Comunidade Conectada</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim">
+            <h1>Maanaim</h1>
+        </a>
+        <nav>
+            <a href="index.html" class="active">Início</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="oracao.html">Oração</a>
+            <a href="login.html" class="btn-login">Área da Liderança</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="svg-maanaim.svg" alt="Logo" class="hero-logo">
+            <h2>Bem-vindo à Família <span>MaanaiM</span></h2>
+            <p>Um lugar de adoração, ensino da Palavra e comunhão. Conecte-se com a nossa comunidade, acompanhe os próximos cultos e compartilhe seus pedidos de oração conosco.</p>
+            <div class="hero-cta">
+                <a href="eventos.html"><button class="btn-lg">Ver Agenda Completa</button></a>
+                <a href="oracao.html"><button class="btn-lg btn-secondary">Pedir Oração</button></a>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2>Próximos Eventos</h2>
+                <p>Acompanhe nossos cultos, encontros e ações sociais.</p>
+            </div>
+            <div class="events-grid" id="lista-avisos-home">
+                <div class="card text-center">Buscando eventos...</div>
+            </div>
+        </section>
+
+        <!-- ═══ PROGRAMAÇÃO SEMANAL ════════════════════════════════════ -->
+        <section class="schedule-section">
+            <div class="schedule-inner">
+                <div class="schedule-header">
+                    <span class="schedule-eyebrow">Toda semana</span>
+                    <h2>Nossa Programação</h2>
+                    <p>Junte-se a nós durante a semana. Todos são bem-vindos!</p>
+                </div>
+
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <div class="schedule-day">Segunda-feira</div>
+                        <div class="schedule-name">Escola Bíblica</div>
+                        <div class="schedule-tag">EBD</div>
+                        <div class="schedule-time">
+                            19:00
+                        </div>
+                    </div>
+
+                    <div class="schedule-card schedule-card--highlight">
+                        <div class="schedule-day">Quarta-feira</div>
+                        <div class="schedule-name">Culto de Oração</div>
+                        <div class="schedule-tag">Intercessão</div>
+                        <div class="schedule-time">
+                            19:00
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="schedule-day">Sexta-feira</div>
+                        <div class="schedule-name">Culto da Família</div>
+                        <div class="schedule-tag">Família</div>
+                        <div class="schedule-time">
+                            19:00
+                        </div>
+                    </div>
+
+                    <div class="schedule-card schedule-card--highlight">
+                        <div class="schedule-day">Domingo</div>
+                        <div class="schedule-name">Culto de Adoração</div>
+                        <div class="schedule-tag">Principal</div>
+                        <div class="schedule-time">
+                            19:00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim" class="footer-logo" style="filter: brightness(0) invert(1);">
+            <div class="footer-links">
+                <a href="index.html">Início</a>
+                <a href="eventos.html">Eventos</a>
+                <a href="oracao.html">Oração</a>
+                <a href="login.html">Acesso Liderança</a>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Igreja Evangélica Congregacional Maanaim. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/app.js?v=4"></script>
+</body>
+</html>

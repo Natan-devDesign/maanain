@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin — Maanaim</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <script>if (!localStorage.getItem('token')) window.location.href = 'login.html';</script>
+</head>
+<body style="background-color: var(--bg-off);">
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim">
+            <h1>Maanaim <span style="font-size: 0.8rem; color: var(--text-400); font-weight: 500; background: var(--bg-subtle); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); margin-left: 4px;">Admin</span></h1>
+        </a>
+        <nav>
+            <a href="admin.html" class="active">Orações</a>
+            <a href="gerenciar-eventos.html">Eventos</a>
+            <button id="btn-logout" class="btn-login" style="cursor:pointer; background-color: transparent; border: 1.5px solid var(--border-strong); color: var(--text-700);">Sair</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <div>
+                <h2>Painel de Orações</h2>
+                <p>Controle central dos pedidos enviados pela comunidade.</p>
+            </div>
+            <a href="gerenciar-eventos.html"><button>Gerenciar Eventos →</button></a>
+        </div>
+
+        <article class="card">
+            <h3>Pedidos Recebidos</h3>
+            <p style="margin-bottom: 1.5rem; font-size: 0.875rem;" class="text-muted">
+                Confidencial — acesso restrito à liderança.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Recebido em</th>
+                            <th>Nome</th>
+                            <th>Pedido</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-pedidos">
+                        <tr><td colspan="3" class="text-center">Carregando dados...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim" class="footer-logo" style="filter: brightness(0) invert(1);">
+            <div class="footer-bottom">
+                &copy; 2026 Igreja Evangélica Congregacional Maanaim.
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/app.js?v=4"></script>
+</body>
+</html>

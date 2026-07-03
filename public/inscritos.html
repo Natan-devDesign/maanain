@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscritos — Maanaim Admin</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body style="background-color: var(--bg-off);">
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim">
+            <h1>Maanaim <span style="font-size: 0.8rem; color: var(--text-400); font-weight: 500; background: var(--bg-subtle); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); margin-left: 4px;">Admin</span></h1>
+        </a>
+        <nav>
+            <a href="admin.html">Orações</a>
+            <a href="gerenciar-eventos.html" class="active">Eventos</a>
+            <button onclick="logout()" class="btn-login" style="cursor:pointer; background-color: transparent; border: 1.5px solid var(--border-strong); color: var(--text-700);">Sair</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <div>
+                <h2 id="titulo-evento-inscritos">Inscritos do Evento</h2>
+                <p>Lista de participantes confirmados.</p>
+            </div>
+            <a href="gerenciar-eventos.html"><button class="btn-secondary">← Voltar para Eventos</button></a>
+        </div>
+
+        <article class="card">
+            <div style="overflow-x: auto;">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>WhatsApp</th>
+                            <th>Data Inscrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-inscritos">
+                        <tr><td colspan="4" class="text-center">Carregando inscritos...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim" class="footer-logo" style="filter: brightness(0) invert(1);">
+            <div class="footer-bottom">
+                &copy; 2026 Igreja Evangélica Congregacional Maanaim.
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/app.js?v=4"></script>
+    <script>
+        if (!localStorage.getItem('token')) window.location.href = 'login.html';
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

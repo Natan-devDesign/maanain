@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Envie seu pedido de oração para a Igreja Maanaim.">
+    <title>Central de Oração — Maanaim</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim">
+            <h1>Maanaim</h1>
+        </a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="oracao.html" class="active">Oração</a>
+            <a href="login.html" class="btn-login">Área da Liderança</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="padding: 4rem 2.5rem;">
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem);">Central de <span>Oração</span></h2>
+            <p>Nossa equipe pastoral está pronta para orar por você. Submeta seu pedido abaixo — seus dados são confidenciais e tratados com total carinho e respeito.</p>
+        </section>
+
+        <div class="container-narrow">
+            <article class="card">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Enviar Pedido de Oração</h3>
+                <form id="form-oracao">
+                    <div class="form-group">
+                        <label for="nome-oracao">Nome (Opcional)</label>
+                        <input type="text" id="nome-oracao" placeholder="Ex: João Silva">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto-oracao">Seu Pedido *</label>
+                        <textarea id="texto-oracao" rows="5" placeholder="Escreva seu pedido aqui..." required></textarea>
+                    </div>
+                    <button type="submit">Enviar Pedido de Oração</button>
+                </form>
+            </article>
+        </div>
+
+        <!-- MODAL SUCESSO -->
+        <div id="modal-sucesso-oracao" class="modal">
+            <div class="modal-content" style="text-align: center; max-width: 400px; padding: 3rem 2rem;">
+                <div style="font-size: 4rem; margin-bottom: 1rem; display: inline-block; animation: modal-in 0.5s ease-out;">🙏</div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; padding-right: 0; color: var(--cf-orange);">Pedido Recebido</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">Nossa equipe pastoral já recebeu o seu pedido confidencial e estará orando por você. Que Deus te abençoe!</p>
+                <button onclick="document.getElementById('modal-sucesso-oracao').classList.remove('active')" class="btn-secondary" style="width: 100%;">Fechar Mensagem</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="svg-maanaim.svg" alt="Logo Maanaim" class="footer-logo" style="filter: brightness(0) invert(1);">
+            <div class="footer-links">
+                <a href="index.html">Início</a>
+                <a href="eventos.html">Eventos</a>
+                <a href="oracao.html">Oração</a>
+                <a href="login.html">Acesso Liderança</a>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Igreja Evangélica Congregacional Maanaim. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área de acesso restrito à liderança da Igreja Maanaim.">
+    <title>Acesso Restrito — Maanaim</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body style="background-color: var(--bg-subtle);">
+
+    <div class="login-container">
+        <div class="login-header">
+            <a href="index.html">
+                <img src="svg-maanaim.svg" alt="Logo Maanaim" style="margin: 0 auto;">
+            </a>
+            <h2>Acesso ao Painel</h2>
+            <p>Área restrita à liderança oficial.</p>
+        </div>
+
+        <div class="login-box">
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="login-user">Usuário</label>
+                    <input type="text" id="login-user" placeholder="Digite seu usuário" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" placeholder="Digite sua senha" required autocomplete="current-password">
+                </div>
+                <button type="submit" style="width: 100%; margin-top: 0.5rem;">Entrar com Segurança</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/app.js?v=4"></script>
+</body>
+</html>
