@@ -102,6 +102,35 @@ pool.connect(async (err, client, release) => {
                 console.log('Usuário admin padrão criado! Login: admin | Senha: 123456');
             }
 
+            // Seed de avisos se a tabela estiver vazia
+            const avisosCount = await client.query('SELECT COUNT(*) FROM avisos');
+            if (parseInt(avisosCount.rows[0].count) === 0) {
+                await client.query(`
+                    INSERT INTO avisos (titulo, data, descricao, imagem) VALUES
+                    ('Culto de Celebração e Ceia', '2026-07-05', 'Venha participar do nosso culto principal de domingo. Neste dia teremos a Santa Ceia do Senhor, um momento de muita comunhão e reflexão espiritual.', '/uploads/ceia.png'),
+                    ('Encontro de Jovens (Geração Eleita)', '2026-07-11', 'Uma noite especial para a juventude com muito louvor, dinâmicas e uma palavra direcionada para os desafios dessa geração. Traga um amigo!', '/uploads/jovens.png'),
+                    ('Reunião de Oração e Intercessão', '2026-07-08', 'Culto dedicado inteiramente à oração pelos pedidos da igreja, pelas famílias e pela nação. Venha clamar conosco pelo mover de Deus.', '/uploads/oracao.png'),
+                    ('Escola Bíblica Dominical (EBD)', '2026-07-12', 'Estudo aprofundado das escrituras para todas as idades. Classes divididas por faixa etária com professores preparados para tirar suas dúvidas.', '/uploads/ebd.png'),
+                    ('Culto das Mulheres (Chá de Comunhão)', '2026-07-18', 'Um momento exclusivo para as mulheres da nossa congregação. Teremos uma palavra encorajadora, louvor e, em seguida, um delicioso chá de comunhão.', '/uploads/mulheres.png'),
+                    ('Mutirão Solidário - Entrega de Cestas', '2026-07-25', 'Ação social organizada pela igreja para montagem e distribuição de cestas básicas para famílias carentes da nossa comunidade.', '/uploads/social.png');
+                `);
+                console.log('Seed de avisos inserido (6 eventos).');
+            }
+
+            // Seed de pedidos de oração se a tabela estiver vazia
+            const pedidosCount = await client.query('SELECT COUNT(*) FROM pedidos_oracao');
+            if (parseInt(pedidosCount.rows[0].count) === 0) {
+                await client.query(`
+                    INSERT INTO pedidos_oracao (nome, pedido, data) VALUES
+                    ('tese', 'asdasd', '01/07/2026, 16:12:23'),
+                    ('Jose da silva', 'Portas de emprego', '01/07/2026, 16:58:47'),
+                    ('Jose da silva', 'sfsf', '01/07/2026, 16:58:58'),
+                    ('asd', 'adasd', '01/07/2026, 17:01:01'),
+                    ('Carmelina', 'Preciso de libertação', '03/07/2026, 09:10:25');
+                `);
+                console.log('Seed de pedidos de oração inserido (5 registros).');
+            }
+
         } catch (tableErr) {
             console.error('Erro ao criar/atualizar tabelas', tableErr.stack);
         } finally {
